@@ -1,0 +1,48 @@
+:host {
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 6px 8px 6px 8px;
+  min-width: 4rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.outline {
+  background-color: transparent;
+  color: black;
+  border: 1px solid var(--secondary, lightgray);
+}
+
+.outline:hover {
+  filter: brightness(105%);
+}
+
+:host([primary="true"][look="outline"]) button {
+  color: var(--primary, #3490DE);
+  border: 1px solid var(--primary, #3490DE);
+}
+
+.flat {
+  background-color: var(--secondary, lightgray);
+  color: black;
+  border: 1px solid rgb(200, 200, 200);
+  box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+}
+
+.flat:hover {
+  filter: brightness(115%);
+}
+
+:host([primary="true"][look="flat"]) button {
+  background-color: var(--primary, #3490DE);
+  color: white;
+  border: 1px solid #3185cf;
+}
+
+:host([primary="true"][look="flat"]) button:hover {
+  filter: brightness(115%);
+}
