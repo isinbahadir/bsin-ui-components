@@ -10,6 +10,10 @@ export namespace Components {
         "look": string;
         "primary": boolean;
     }
+    interface BsinModal {
+        "open": boolean;
+        "title": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -32,6 +36,12 @@ declare global {
         prototype: HTMLBsinButtonElement;
         new (): HTMLBsinButtonElement;
     };
+    interface HTMLBsinModalElement extends Components.BsinModal, HTMLStencilElement {
+    }
+    var HTMLBsinModalElement: {
+        prototype: HTMLBsinModalElement;
+        new (): HTMLBsinModalElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -40,6 +50,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "bsin-button": HTMLBsinButtonElement;
+        "bsin-modal": HTMLBsinModalElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -47,6 +58,10 @@ declare namespace LocalJSX {
     interface BsinButton {
         "look"?: string;
         "primary"?: boolean;
+    }
+    interface BsinModal {
+        "open"?: boolean;
+        "title"?: string;
     }
     interface MyComponent {
         /**
@@ -64,6 +79,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "bsin-button": BsinButton;
+        "bsin-modal": BsinModal;
         "my-component": MyComponent;
     }
 }
@@ -72,6 +88,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "bsin-button": LocalJSX.BsinButton & JSXBase.HTMLAttributes<HTMLBsinButtonElement>;
+            "bsin-modal": LocalJSX.BsinModal & JSXBase.HTMLAttributes<HTMLBsinModalElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

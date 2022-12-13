@@ -10,7 +10,19 @@
 </head>
 
 <body>
-  <bsin-button look="flat" primary="true" id="abcd">Click me</bsin-button>
+  <bsin-button look="flat" primary="true" id="abcd" onclick="handleClick()">Open Modal</bsin-button>
+  <bsin-modal>Some Content</bsin-modal>
+
 </body>
+<script>
+  function handleClick() {
+    document.querySelector('bsin-modal').open = true;
+    // const modal = document.createElement('bsin-modal');
+    // modal.open = true;
+    // modal.innerHTML = 'some content';
+    // document.body.appendChild(modal);
+  }
+
+</script>
 
 </html>
